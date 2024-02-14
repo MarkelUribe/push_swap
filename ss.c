@@ -1,37 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ss.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/09 16:11:05 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/14 13:52:12 by muribe-l         ###   ########.fr       */
+/*   Created: 2024/02/14 12:06:14 by muribe-l          #+#    #+#             */
+/*   Updated: 2024/02/14 13:09:43 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-# define PUSH_SWAP
+#include "push_swap.h"
 
-# include<unistd.h>
-# include<stdlib.h>
-# include<limits.h>
-
-typedef struct l_stack
+void	ss(l_stack *l)
 {
-	int		*a;
-	int		*b;
-	int		alen;
-	int		blen;
-	int		argc;
-}	l_stack;
-
-void	sa(int *a);
-void	sb(int *b);
-void	ss(l_stack *l);
-void	pa(l_stack *l);
-void	pb(l_stack *l);
-void	swap(int *a1, int *a2);
-void	ra(l_stack *l);
-void	rb(l_stack *l);
-#endif
+	sa(l->a);
+	sb(l->b);
+	write(1, "ss\n", 3);
+}

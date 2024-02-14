@@ -1,37 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   sb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/09 16:11:05 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/14 13:52:12 by muribe-l         ###   ########.fr       */
+/*   Created: 2024/02/14 12:05:32 by muribe-l          #+#    #+#             */
+/*   Updated: 2024/02/14 12:07:58 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-# define PUSH_SWAP
+#include "push_swap.h"
 
-# include<unistd.h>
-# include<stdlib.h>
-# include<limits.h>
-
-typedef struct l_stack
+void	sb(int *b)
 {
-	int		*a;
-	int		*b;
-	int		alen;
-	int		blen;
-	int		argc;
-}	l_stack;
+	int	tmp;
 
-void	sa(int *a);
-void	sb(int *b);
-void	ss(l_stack *l);
-void	pa(l_stack *l);
-void	pb(l_stack *l);
-void	swap(int *a1, int *a2);
-void	ra(l_stack *l);
-void	rb(l_stack *l);
-#endif
+	tmp = b[0];
+	b[0] = b[1];
+	b[1] = tmp;
+	write(1, "sb\n", 3);
+}

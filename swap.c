@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/09 16:11:05 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/14 13:52:12 by muribe-l         ###   ########.fr       */
+/*   Created: 2024/02/14 13:37:34 by muribe-l          #+#    #+#             */
+/*   Updated: 2024/02/14 13:38:59 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-# define PUSH_SWAP
+#include "push_swap.h"
 
-# include<unistd.h>
-# include<stdlib.h>
-# include<limits.h>
-
-typedef struct l_stack
+void	swap(int *a1, int *a2)
 {
-	int		*a;
-	int		*b;
-	int		alen;
-	int		blen;
-	int		argc;
-}	l_stack;
+	int	temp;
 
-void	sa(int *a);
-void	sb(int *b);
-void	ss(l_stack *l);
-void	pa(l_stack *l);
-void	pb(l_stack *l);
-void	swap(int *a1, int *a2);
-void	ra(l_stack *l);
-void	rb(l_stack *l);
-#endif
+	temp = *a1;
+	*a1 = *a2;
+	*a2 = temp;
+}
