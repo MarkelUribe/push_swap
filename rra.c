@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 13:56:54 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/14 14:00:10 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/14 16:24:51 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,10 @@
 
 void	rra(l_stack *l)
 {
-	
+	int	i;
+
+	i = l->alen;
+	while (i--)
+		swap(&l->a[i], &l->a[i - 1]);
+	write(1, "rra\n", 4);
 }
