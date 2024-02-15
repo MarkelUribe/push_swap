@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ra.c                                               :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/14 12:10:17 by muribe-l          #+#    #+#             */
+/*   Created: 2024/02/15 12:07:02 by muribe-l          #+#    #+#             */
 /*   Updated: 2024/02/15 12:57:38 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ra(t_stack *l)
+void	free_all(t_stack *l)
 {
-	int	i;
-
-	i = 0;
-	while (i + 1 < l->alen)
-	{
-		swap(&l->a[i], &l->a[i + 1]);
-		i++;
-	}
-	write(1, "ra\n", 3);
+	if (l->a)
+		free(l->a);
+	if (l->b)
+		free(l->b);
+	if (l)
+		free(l);
+	ft_printf("Error\n");
 }

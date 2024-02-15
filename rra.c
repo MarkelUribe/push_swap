@@ -6,13 +6,13 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 13:56:54 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/14 16:24:51 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/15 12:57:38 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rra(l_stack *l)
+void	rra(t_stack *l)
 {
 	int	i;
 

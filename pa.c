@@ -6,13 +6,13 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:07:45 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/14 13:10:23 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/15 12:57:38 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(l_stack *l)
+void	pa(t_stack *l)
 {
 	l->a[0] = l->b[0];
 	write(1, "pa\n", 3);
