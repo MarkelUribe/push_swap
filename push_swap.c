@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:40:32 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/15 12:57:38 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/16 15:43:12 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,18 @@ void	fill_stack(t_stack *l, char **args)
 	}
 }
 
+void	print_a(t_stack *l)
+{
+	int	i;
+
+	i = 0;
+	while (i < l->alen)
+	{
+		ft_printf("%d", l->a[i]);
+		i++;
+	}
+}
+
 int	main(int argc, char **args)
 {
 	t_stack	*list;
@@ -39,4 +51,6 @@ int	main(int argc, char **args)
 		return (0);
 	list->argc = argc;
 	fill_stack(list, args);
+	print_a(list);
+	free(list);
 }
