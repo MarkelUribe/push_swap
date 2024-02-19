@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:07:45 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/15 12:57:38 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/19 13:46:11 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,22 @@
 
 void	pa(t_stack *l)
 {
+	int	i;
+
+	i = l->alen;
+	l->blen -= 1;
+	l->alen += 1;
+	while (i > 0)
+	{
+		swap(l->a[i], l->b[i - 1]);
+		i--;
+	}
 	l->a[0] = l->b[0];
+	i = 0;
+	while (i <= l->blen)
+	{
+		l->b[i] = l->b[i + 1];
+		i++;
+	}
 	write(1, "pa\n", 3);
 }

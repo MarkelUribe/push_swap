@@ -6,7 +6,7 @@
 #    By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/14 11:18:25 by muribe-l          #+#    #+#              #
-#    Updated: 2024/02/15 13:32:46 by muribe-l         ###   ########.fr        #
+#    Updated: 2024/02/19 12:20:22 by muribe-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = push_swap.a
 SOURCES = sa.c sb.c ss.c ra.c rb.c pa.c pb.c rr.c rra.c rrb.c rrr.c swap.c push_swap.c \
 free.c 
 
-OBJECTS = $(SOURCES:.c=.o)
+OBJECTS = $(patsubst %.c,$(ODIR)/%.o,$(SOURCES))
+ODIR = ./obj
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -fsanitize=address
@@ -23,12 +24,13 @@ RM = rm -rf
 LIBFTNAME = libft.a
 LIBFTDIR = ./libft
 
-%.o: %.c
+$(ODIR)/%.o: %.c
+	mkdir -p $(ODIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJECTS)
 	make -C $(LIBFTDIR) all
-	#cp $(LIBFTDIR)/$(LIBFTNAME) $(NAME)
+	cp $(LIBFTDIR)/$(LIBFTNAME) $(NAME)
 	$(LIB) $(NAME) $(OBJECTS)
 
 all: $(NAME)
