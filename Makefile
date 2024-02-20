@@ -6,7 +6,7 @@
 #    By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/14 11:18:25 by muribe-l          #+#    #+#              #
-#    Updated: 2024/02/19 12:20:22 by muribe-l         ###   ########.fr        #
+#    Updated: 2024/02/20 13:26:35 by muribe-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ $(ODIR)/%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJECTS)
-	make -C $(LIBFTDIR) all
+	make bonus -C $(LIBFTDIR) all
 	cp $(LIBFTDIR)/$(LIBFTNAME) $(NAME)
 	$(LIB) $(NAME) $(OBJECTS)
 
@@ -37,11 +37,11 @@ all: $(NAME)
 
 clean:
 	$(RM) $(OBJECTS)
-	make clean -C $(LIBFTDIR)
+	make fclean -C $(LIBFTDIR)
 
 fclean: clean
 	$(RM) $(NAME)
-	make fclean -C $(LIBFTDIR)
+	make clean -C $(LIBFTDIR)
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:25:00 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/15 12:57:38 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/20 11:32:07 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	rrb(t_stack *l)
 	int	i;
 
 	i = l->blen;
-	while (i--)
+	while (i-- > 1)
 		swap(&l->b[i], &l->b[i - 1]);
 	write(1, "rrb\n", 4);
 }

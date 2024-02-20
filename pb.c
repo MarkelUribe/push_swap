@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:09:41 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/19 15:48:54 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/20 12:30:13 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	pb(t_stack *l)
 	int	i;
 
 	i = l->blen;
-	l->blen += 1;
-	l->alen -= 1;
+	l->blen++;
+	l->alen--;
 	while (i > 0)
 	{
 		swap(&l->b[i], &l->b[i - 1]);
