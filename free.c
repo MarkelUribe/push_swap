@@ -6,13 +6,13 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 12:07:02 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/19 12:45:13 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/20 16:15:40 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_all(t_stack *l)
+void	free_all(t_list *l)
 {
 	if (l->a)
 		free(l->a);

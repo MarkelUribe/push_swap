@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 16:11:05 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/16 15:42:50 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/20 16:20:45 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,32 @@
 
 typedef struct t_stack
 {
-	int		*a;
-	int		*b;
+	int		content;
+	int		index;
+	t_stack	*next;
+	t_stack	*prev;
+} t_stack;
+
+typedef struct t_list
+{
+	t_stack	*a;
+	t_stack	*b;
 	int		alen;
 	int		blen;
 	int		argc;
-}	t_stack;
+}	t_list;
 
 void	sa(int *a);
 void	sb(int *b);
-void	ss(t_stack *l);
-void	pa(t_stack *l);
-void	pb(t_stack *l);
+void	ss(t_list *l);
+void	pa(t_list *l);
+void	pb(t_list *l);
 void	swap(int *a1, int *a2);
-void	ra(t_stack *l);
-void	rb(t_stack *l);
-void	rr(t_stack *l);
-void	rra(t_stack *l);
-void	rrb(t_stack *l);
-void	rrr(t_stack *l);
-void	free_all(t_stack *l);
+void	ra(t_list *l);
+void	rb(t_list *l);
+void	rr(t_list *l);
+void	rra(t_list *l);
+void	rrb(t_list *l);
+void	rrr(t_list *l);
+void	free_all(t_list *l);
 #endif
