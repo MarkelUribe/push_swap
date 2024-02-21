@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 16:11:05 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/20 16:20:45 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/21 19:24:32 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,31 +21,31 @@
 typedef struct t_stack
 {
 	int		content;
-	int		index;
-	t_stack	*next;
-	t_stack	*prev;
+	struct t_stack	*next;
 } t_stack;
 
-typedef struct t_list
+typedef struct t_ps
 {
 	t_stack	*a;
 	t_stack	*b;
-	int		alen;
-	int		blen;
-	int		argc;
-}	t_list;
+}	t_ps;
 
-void	sa(int *a);
-void	sb(int *b);
-void	ss(t_list *l);
-void	pa(t_list *l);
-void	pb(t_list *l);
-void	swap(int *a1, int *a2);
-void	ra(t_list *l);
-void	rb(t_list *l);
-void	rr(t_list *l);
-void	rra(t_list *l);
-void	rrb(t_list *l);
-void	rrr(t_list *l);
-void	free_all(t_list *l);
+void	sa(t_ps *l);
+void	sb(t_ps *l);
+void	ss(t_ps *l);
+void	pa(t_ps *l);
+void	pb(t_ps *l);
+void	swap(t_stack *a1, t_stack *a2);
+void	ra(t_ps *l);
+void	rb(t_ps *l);
+void	rr(t_ps *l);
+void	rra(t_ps *l);
+void	rrb(t_ps *l);
+void	rrr(t_ps *l);
+void	free_all(t_ps *l);
+t_stack	*stacknew(int content);
+t_stack	*stacklast(t_stack *lst);
+int		stacksize(t_stack *lst);
+void	stackadd_back(t_stack **lst, t_stack *new);
+void	stackadd_front(t_stack *lst, t_stack *new);
 #endif

@@ -6,13 +6,13 @@
 #    By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/14 11:18:25 by muribe-l          #+#    #+#              #
-#    Updated: 2024/02/20 13:26:35 by muribe-l         ###   ########.fr        #
+#    Updated: 2024/02/21 18:52:04 by muribe-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap.a
 SOURCES = sa.c sb.c ss.c ra.c rb.c pa.c pb.c rr.c rra.c rrb.c rrr.c swap.c push_swap.c \
-free.c 
+free.c list.c
 
 OBJECTS = $(patsubst %.c,$(ODIR)/%.o,$(SOURCES))
 ODIR = ./obj
@@ -29,7 +29,7 @@ $(ODIR)/%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJECTS)
-	make bonus -C $(LIBFTDIR) all
+	make -C $(LIBFTDIR) all
 	cp $(LIBFTDIR)/$(LIBFTNAME) $(NAME)
 	$(LIB) $(NAME) $(OBJECTS)
 

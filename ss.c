@@ -6,15 +6,15 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:06:14 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/20 16:15:40 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/21 18:52:26 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ss(t_list *l)
+void	ss(t_ps *l)
 {
-	sa(l->a);
-	sb(l->b);
+	sa(l);
+	sb(l);
 	write(1, "ss\n", 3);
 }

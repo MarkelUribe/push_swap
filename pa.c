@@ -6,30 +6,16 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:07:45 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/20 16:15:40 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/21 19:00:23 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(t_list *l)
+void	pa(t_ps *l)
 {
-	int	i;
-
-	i = l->alen;
-	l->blen -= 1;
-	l->alen += 1;
-	while (i > 0)
-	{
-		swap(&l->a[i], &l->a[i - 1]);
-		i--;
-	}
-	l->a[0] = l->b[0];
-	i = 0;
-	while (i <= l->blen)
-	{
-		l->b[i] = l->b[i + 1];
-		i++;
-	}
+	if (!l->b->content)
+		return ;
+	l->b->next = l->a;
 	write(1, "pa\n", 3);
 }

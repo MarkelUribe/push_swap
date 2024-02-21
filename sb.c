@@ -6,18 +6,22 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:05:32 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/15 12:11:24 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/21 18:51:19 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sb(int *b)
+void	sb(t_ps *l)
 {
-	int	tmp;
-
-	tmp = b[0];
-	b[0] = b[1];
-	b[1] = tmp;
-	write(1, "sb\n", 3);
+	t_stack	*tmp;
+	
+	if (l->b != NULL && l->b->next != NULL)
+	{
+		tmp = l->b->next;
+		l->b->next = tmp->next;
+		tmp->next = l->b;
+		l->b = tmp;
+		write(1, "sb\n", 3);
+	}
 }

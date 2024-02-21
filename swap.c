@@ -6,17 +6,17 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 13:37:34 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/15 12:11:37 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/21 19:23:15 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(int *a1, int *a2)
+void	swap(t_stack *a1, t_stack *a2)
 {
-	int	temp;
+	t_stack	*temp;
 
-	temp = *a1;
-	*a1 = *a2;
-	*a2 = temp;
+	temp = a1->next;
+	a1->next = a2->next;
+	a2->next = temp;
 }

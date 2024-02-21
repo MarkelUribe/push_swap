@@ -6,18 +6,28 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:25:00 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/20 16:15:40 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/21 19:22:34 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rrb(t_list *l)
+void	rrb(t_ps *l)
 {
 	int	i;
+	t_stack *lst;
+	t_stack *last;
 
-	i = l->blen;
-	while (i-- > 1)
-		swap(&l->b[i], &l->b[i - 1]);
+	if (!l->b && !l->b->next)
+		return ;
+	last = stacklast(l->b);
+	i = 0;
+	while (i > stacksize(l->b) - 1)
+	{
+		lst = lst->next;
+		i--;
+	}
+	lst->next = NULL;
+	last->next = l->b;
 	write(1, "rrb\n", 4);
 }
