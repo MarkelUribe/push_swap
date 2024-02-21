@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:25:00 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/21 19:22:34 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/21 19:59:26 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	rrb(t_ps *l)
 {
-	int	i;
-	t_stack *lst;
-	t_stack *last;
+	int		i;
+	t_stack	*lst;
+	t_stack	*last;
 
 	if (!l->b && !l->b->next)
 		return ;

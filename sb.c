@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:05:32 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/21 18:51:19 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/21 19:59:42 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	sb(t_ps *l)
 {
 	t_stack	*tmp;
-	
+
 	if (l->b != NULL && l->b->next != NULL)
 	{
 		tmp = l->b->next;

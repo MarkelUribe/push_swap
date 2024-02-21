@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 12:07:02 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/21 18:25:54 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/21 19:54:48 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	free_stack(t_stack *s)
 {
 	t_stack	*tmp;
 
-	if (!s || !&s)
+	if (!s)
 		return ;
-	while (s && &s)
+	while (s)
 	{
 		tmp = s->next;
 		free(s);

@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 17:20:38 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/21 19:27:27 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/21 20:42:10 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	stacksize(t_stack *lst)
 	}
 	return (n);
 }
+
 t_stack	*stacklast(t_stack *lst)
 {
 	int	i;
@@ -63,6 +64,6 @@ void	stackadd_back(t_stack **lst, t_stack *new)
 
 void	stackadd_front(t_stack *lst, t_stack *new)
 {
-	new->next = &lst;
+	new->next = lst;
 	lst = new;
 }

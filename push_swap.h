@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 16:11:05 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/21 19:24:32 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/21 19:58:38 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 
 typedef struct t_stack
 {
-	int		content;
+	int				content;
 	struct t_stack	*next;
-} t_stack;
+}	t_stack;
 
 typedef struct t_ps
 {

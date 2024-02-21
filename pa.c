@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:07:45 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/21 19:00:23 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/21 19:52:15 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ void	pa(t_ps *l)
 {
 	if (!l->b->content)
 		return ;
-	l->b->next = l->a;
+	if (!l->a)
+	{
+		l->a = l->b;
+		l->b->next = NULL;
+	}
+	else
+		l->b->next = l->a;
 	write(1, "pa\n", 3);
 }

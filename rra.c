@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 13:56:54 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/21 19:21:57 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/21 19:59:16 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	rra(t_ps *l)
 {
-	int	i;
-	t_stack *lst;
-	t_stack *last;
+	int		i;
+	t_stack	*lst;
+	t_stack	*last;
 
 	if (!l->a && !l->a->next)
 		return ;
