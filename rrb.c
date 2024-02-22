@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:25:00 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/21 19:59:26 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/22 13:26:52 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ void	rrb(t_ps *l)
 	if (!l->b && !l->b->next)
 		return ;
 	last = stacklast(l->b);
+	lst = l->b;
 	i = 0;
-	while (i > stacksize(l->b) - 1)
+	while (i < stacksize(l->b) - 1)
 	{
 		lst = lst->next;
-		i--;
+		i++;
 	}
 	lst->next = NULL;
 	last->next = l->b;

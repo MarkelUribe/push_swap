@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:40:32 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/21 20:42:12 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/22 13:12:35 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,18 @@ void	print_ab(t_ps *l)
 
 	ta = l->a;
 	tb = l->b;
-	while (ta && tb)
+	while (ta || tb)
 	{
-		ta = l->a->next;
-		tb = l->b->next;
-		ft_printf("%d\t%d\n", ta->content, tb->content);
-		ta = ta->next;
-		tb = tb->next;
+		if (ta && tb)
+			ft_printf("%d\t%d\n", ta->content, tb->content);
+		else if (ta)
+			ft_printf("%d\t \n", ta->content);
+		else if (tb)
+			ft_printf(" \t%d\n", tb->content);
+		if (ta)
+			ta = ta->next;
+		if (tb)
+			tb = tb->next;
 	}
 	ft_printf("_\t_\n");
 	ft_printf("A\tB\n");
@@ -68,12 +73,12 @@ int	main(int argc, char **args)
 		return (0);
 	fill_stack(list, args, argc);
 	print_ab(list);
-	//pb(list);
-	//pb(list);
-	//pb(list);
-	//pb(list);
+	pb(list);
+	pb(list);
+	pb(list);
+	pb(list);
 	//print_ab(list);
-	//rrb(list);
-	//print_ab(list);
+	rrb(list);
+	print_ab(list);
 	free_all(list);
 }
