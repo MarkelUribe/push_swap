@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:40:32 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/22 13:12:35 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/22 17:05:44 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	main(int argc, char **args)
 	pb(list);
 	pb(list);
 	pb(list);
-	//print_ab(list);
+	print_ab(list);
 	rrb(list);
 	print_ab(list);
 	free_all(list);
