@@ -6,24 +6,43 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:40:32 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/22 17:05:44 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/23 17:17:45 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	check_args(t_ps *l, char **args, int argc)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (i < argc)
+	{
+		j = 0;
+		while (args[i][j])
+		{
+			if (!ft_isdigit(args[i][j]))
+			{
+				free_all(l);
+				ft_printf("Error\n");
+				exit(0);
+			}
+			j++;
+		}
+		i++;
+	}
+}
 
 void	fill_stack(t_ps *l, char **args, int argc)
 {
 	int		i;
 	t_stack	*tmp;
 
+	check_args(l, args, argc);
 	l->a = stacknew(ft_atoi(args[1]));
 	l->b = NULL;
-	if (!l->a)
-	{
-		free_all(l);
-		ft_printf("Error\n");
-	}
 	i = 2;
 	while (i < argc)
 	{
@@ -32,6 +51,7 @@ void	fill_stack(t_ps *l, char **args, int argc)
 		{
 			free_all(l);
 			ft_printf("Error\n");
+			exit(0);
 		}
 		stacklast(l->a)->next = tmp;
 		i++;
@@ -66,11 +86,12 @@ int	main(int argc, char **args)
 {
 	t_ps	*list;
 
-	if (argc == 1)
-		return (0);
 	list = malloc(sizeof(t_ps));
-	if (!list)
+	if (argc == 1 || !list)
+	{
+		ft_printf("Error\n");
 		return (0);
+	}
 	fill_stack(list, args, argc);
 	print_ab(list);
 	pb(list);
@@ -78,7 +99,8 @@ int	main(int argc, char **args)
 	pb(list);
 	pb(list);
 	print_ab(list);
-	rrb(list);
+	rra(list);
 	print_ab(list);
 	free_all(list);
+	return (1);
 }

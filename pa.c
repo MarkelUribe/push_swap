@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:07:45 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/22 13:10:09 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/23 16:15:34 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	pa(t_ps *l)
 
 	if (!l->b)
 		return ;
-	
 	tmp = l->b;
 	l->b = l->b->next;
 	tmp->next = l->a;
