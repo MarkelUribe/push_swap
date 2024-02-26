@@ -6,20 +6,19 @@
 #    By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/14 11:18:25 by muribe-l          #+#    #+#              #
-#    Updated: 2024/02/23 16:21:36 by muribe-l         ###   ########.fr        #
+#    Updated: 2024/02/26 16:35:51 by muribe-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap.a
+NAME = push_swap
 SOURCES = sa.c sb.c ss.c ra.c rb.c pa.c pb.c rr.c rra.c rrb.c rrr.c swap.c push_swap.c \
-free.c list.c
+free.c list.c order.c arguments.c
 
 OBJECTS = $(patsubst %.c,$(ODIR)/%.o,$(SOURCES))
 ODIR = ./obj
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -fsanitize=address
-LIB = ar rcs
 RM = rm -rf
 LIBFTNAME = libft.a
 LIBFTDIR = ./libft
@@ -30,8 +29,7 @@ $(ODIR)/%.o: %.c
 
 $(NAME): $(OBJECTS)
 	make -C $(LIBFTDIR) all
-	cp $(LIBFTDIR)/$(LIBFTNAME) $(NAME)
-	$(LIB) $(NAME) $(OBJECTS)
+	$(CC) $(CFLAGS) $(OBJECTS) $(LIBFTDIR)/$(LIBFTNAME) -o $(NAME)
 
 all: $(NAME)
 

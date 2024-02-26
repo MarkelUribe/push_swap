@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 16:11:05 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/21 19:58:38 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/26 16:35:20 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
 # include <limits.h>
 
 typedef struct t_stack
@@ -48,4 +46,6 @@ t_stack	*stacklast(t_stack *lst);
 int		stacksize(t_stack *lst);
 void	stackadd_back(t_stack **lst, t_stack *new);
 void	stackadd_front(t_stack *lst, t_stack *new);
+void	order(t_ps *l);
+void	fill_stack(t_ps *l, char **args, int argc);
 #endif
