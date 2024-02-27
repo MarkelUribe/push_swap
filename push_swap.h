@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 16:11:05 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/26 16:35:20 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/27 11:31:07 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void	rra(t_ps *l);
 void	rrb(t_ps *l);
 void	rrr(t_ps *l);
 void	free_all(t_ps *l);
+void	error_free(t_ps *l);
+void	free_split(char **array);
 t_stack	*stacknew(int content);
 t_stack	*stacklast(t_stack *lst);
 int		stacksize(t_stack *lst);

@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:40:32 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/26 16:35:45 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/27 11:35:39 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	main(int argc, char **args)
 	if (argc == 1)
 		return (0);
 	fill_stack(list, args, argc);
-	//print_ab(list);
+	print_ab(list);
 	order(list);
 	print_ab(list);
 	free_all(list);

@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 12:07:02 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/21 19:54:48 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/27 11:31:11 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,24 @@ void	free_all(t_ps *l)
 		free_stack(l->b);
 	if (l)
 		free(l);
+}
+
+void	error_free(t_ps *l)
+{
+	free_all(l);
+	ft_printf("Error\n");
+	exit(0);
+}
+
+void	free_split(char **array)
+{
+	int	i;
+
+	i = 0;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 }

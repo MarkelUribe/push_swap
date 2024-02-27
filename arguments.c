@@ -6,24 +6,11 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 16:34:50 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/26 18:38:23 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/27 11:43:46 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	free_split(char **array)
-{
-	int	i;
-
-	i = 0;
-	while (array[i])
-	{
-		free(array[i]);
-		i++;
-	}
-	free(array);
-}
 
 void	check_duplicated(t_ps *l)
 {
@@ -43,56 +30,52 @@ void	check_duplicated(t_ps *l)
 			current = current->next;
 		}
 		if (count >= 2)
-		{
-			free_all(l);
-			ft_printf("Error\n");
-			exit(0);
-		}
+			error_free(l);
 		tmp = tmp->next;
 	}
 }
-static void iteratesplit(t_ps *l, char **split)
+
+void	add_to_stack(t_ps *l, char *arg, char **args)
+{
+	t_stack	*tmp;
+
+	tmp = stacknew(ft_atoi(arg));
+	if (!tmp)
+	{
+		free_split(args);
+		error_free(l);
+	}
+	if (!l->a)
+		l->a = tmp;
+	else
+		stacklast(l->a)->next = tmp;
+}
+
+void	check_args(t_ps *l, char **args)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (split[i])
+	while (args[i])
 	{
-		if (ft_atol(split[i]) > INT_MAX || ft_atol(split[i]) < INT_MIN)
-			{
-				free_all(l);
-				free_split(split);
-				ft_printf("Error\n");
-				exit(0);
-			}
-	}
-}
-void	check_args(t_ps *l, char **args, int argc)
-{
-	int		i;
-	int		j;
-	long	cmp;
-	char	**split;
-
-	i = 1;
-	while (i < argc)
-	{
-		split = ft_split(args[i], ' ');
-		iteratesplit(l, split);
-		cmp = ft_atol(args[i]);
+		if (ft_atol(args[i]) > INT_MAX || ft_atol(args[i]) < INT_MIN)
+		{
+			free_split(args);
+			error_free(l);
+		}
 		j = 0;
 		while (args[i][j])
 		{
-			if ((!ft_isdigit(args[i][j]) && args[i][j] != '-')
-				|| cmp > INT_MAX || cmp < INT_MIN)
+			if (!ft_isdigit(args[i][j]) &&
+				(args[i][j] == '-' && !ft_isdigit(args[i][j + 1] && args[i][j - 1] == ' ')))
 			{
-				free_all(l);
-				ft_printf("Error\n");
-				exit(0);
+				free_split(args);
+				error_free(l);
 			}
 			j++;
 		}
+		add_to_stack(l, args[i], args);
 		i++;
 	}
 }
@@ -100,22 +83,16 @@ void	check_args(t_ps *l, char **args, int argc)
 void	fill_stack(t_ps *l, char **args, int argc)
 {
 	int		i;
-	t_stack	*tmp; 
+	char	**split;
 
-	check_args(l, args, argc);
-	l->a = stacknew(ft_atoi(args[1]));
+	l->a = NULL;
 	l->b = NULL;
-	i = 2;
+	i = 1;
 	while (i < argc)
 	{
-		tmp = stacknew(ft_atoi(args[i]));
-		if (!tmp)
-		{
-			free_all(l);
-			ft_printf("Error\n");
-			exit(0);
-		}
-		stacklast(l->a)->next = tmp;
+		split = ft_split(args[i], ' ');
+		check_args(l, split);
+		free_split(split);
 		i++;
 	}
 	check_duplicated(l);
