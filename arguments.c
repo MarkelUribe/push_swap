@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 16:34:50 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/27 11:43:46 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/28 12:51:20 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,29 +51,35 @@ void	add_to_stack(t_ps *l, char *arg, char **args)
 		stacklast(l->a)->next = tmp;
 }
 
+static int	is_valid_number(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[0] == '-')
+		i++;
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	if (ft_atol(str) > INT_MAX || ft_atol(str) < INT_MIN)
+		return (0);
+	return (1);
+}
+
 void	check_args(t_ps *l, char **args)
 {
 	int	i;
-	int	j;
 
 	i = 0;
 	while (args[i])
 	{
-		if (ft_atol(args[i]) > INT_MAX || ft_atol(args[i]) < INT_MIN)
+		if (!is_valid_number(args[i]))
 		{
 			free_split(args);
 			error_free(l);
-		}
-		j = 0;
-		while (args[i][j])
-		{
-			if (!ft_isdigit(args[i][j]) &&
-				(args[i][j] == '-' && !ft_isdigit(args[i][j + 1] && args[i][j - 1] == ' ')))
-			{
-				free_split(args);
-				error_free(l);
-			}
-			j++;
 		}
 		add_to_stack(l, args[i], args);
 		i++;
