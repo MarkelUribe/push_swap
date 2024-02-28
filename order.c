@@ -6,18 +6,18 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 12:52:38 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/28 14:13:43 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/28 17:06:15 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int get_index(t_stack *stack, t_stack *target)
+int	get_index(t_stack *stack, t_stack *target)
 {
 	t_stack	*tmp;
 	int		index;
 
-	index = 0;
+	index = 1;
 	tmp = stack;
 	while (tmp)
 	{
@@ -28,6 +28,7 @@ int get_index(t_stack *stack, t_stack *target)
 	}
 	return (index);
 }
+
 t_stack	*get_smallest(t_stack *stack)
 {
 	t_stack	*smallest;
@@ -52,10 +53,18 @@ void	order(t_ps *l)
 
 	while (stacksize(l->a) > 1)
 	{
+		if (stacksize(l->a) == 2)
+		{
+			if (l->a->content < l->a->next->content)
+				break ;
+		}
 		small = get_smallest(l->a);
 		if (l->a == small)
 			pb(l);
-		ra(l);
+		if (get_index(l->a, small) > stacksize(l->a) / 2)
+			rra(l);
+		else
+			ra(l);
 	}
 	while (stacksize(l->b) > 0)
 		pa(l);

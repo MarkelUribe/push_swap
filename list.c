@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 17:20:38 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/27 11:20:57 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/28 18:03:52 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_stack	*stacknew(int content)
 	if (content)
 		l->content = content;
 	l->next = NULL;
+	l->index = 0;
 	return (l);
 }
 
