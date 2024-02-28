@@ -6,11 +6,20 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 15:38:50 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/01/03 20:40:55 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/28 13:24:52 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	check_minmax(const char *str, int z, int sign)
+{
+	if (sign > 0 && z > (INT_MAX - (*str - '0')) / 10)
+		return (INT_MAX);
+	else if (sign < 0 && z > (INT_MIN + (*str - '0')) / -10)
+		return (INT_MIN);
+	return (0);
+}
 
 int	ft_atoi(const char *str)
 {
@@ -31,6 +40,8 @@ int	ft_atoi(const char *str)
 		str++;
 	while (ft_isdigit(*str))
 	{
+		if (check_minmax(str, z, sign))
+			return (check_minmax(str, z, sign));
 		z *= 10;
 		z += *str - '0';
 		str++;
