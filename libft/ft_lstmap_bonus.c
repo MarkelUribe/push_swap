@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 17:17:47 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/01/11 13:59:19 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/29 12:25:01 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	new = NULL;
 	while (lst)
 	{
-		set = f(lst->content);
+		set = f(lst->nbr);
 		tmp = ft_lstnew(set);
 		if (!tmp)
 		{

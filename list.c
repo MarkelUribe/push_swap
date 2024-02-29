@@ -6,22 +6,22 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 17:20:38 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/28 18:03:52 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/29 17:20:56 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*stacknew(int content)
+t_stack	*stacknew(int nbr)
 {
 	t_stack	*l;
 
 	l = (t_stack *)malloc(sizeof(t_stack));
 	if (!l)
 		return (NULL);
-	if (content)
-		l->content = content;
+	l->nbr = nbr;
 	l->next = NULL;
+	l->cost = 0;
 	l->index = 0;
 	return (l);
 }

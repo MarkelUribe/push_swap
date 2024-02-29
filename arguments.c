@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 16:34:50 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/28 12:51:20 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/29 16:31:35 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	check_duplicated(t_ps *l)
 		current = tmp;
 		while (current != NULL)
 		{
-			if (tmp->content == current->content)
+			if (tmp->nbr == current->nbr)
 				count++;
 			current = current->next;
 		}

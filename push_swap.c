@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:40:32 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/28 17:12:30 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/29 18:03:46 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ void	print_ab(t_ps *l)
 	while (ta || tb)
 	{
 		if (ta && tb)
-			ft_printf("%d-\t%d\t%d\n", count, ta->content, tb->content);
+			ft_printf("%d-\t%d\t%d\n", ta->index, ta->nbr, tb->nbr);
 		else if (ta)
-			ft_printf("%d-\t%d\t \n", count, ta->content);
+			ft_printf("%d-\t%d\t \n", ta->index, ta->nbr);
 		else if (tb)
-			ft_printf("%d-\t \t%d\n", count, tb->content);
+			ft_printf("%d-\t \t%d\n", ta->index, tb->nbr);
 		if (ta)
 			ta = ta->next;
 		if (tb)
@@ -52,9 +52,10 @@ int	main(int argc, char **args)
 	if (argc == 1)
 		return (0);
 	fill_stack(list, args, argc);
-	//print_ab(list);
-	order(list);
-	//print_ab(list);
+	apply_index(list);
+	print_ab(list);
+	turk_sort(list);
+	print_ab(list);
 	free_all(list);
 	return (1);
 }

@@ -6,13 +6,14 @@
 #    By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/14 11:18:25 by muribe-l          #+#    #+#              #
-#    Updated: 2024/02/28 14:12:05 by muribe-l         ###   ########.fr        #
+#    Updated: 2024/02/29 17:32:27 by muribe-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-SOURCES = sa.c sb.c ss.c ra.c rb.c pa.c pb.c rr.c rra.c rrb.c rrr.c swap.c \
-push_swap.c free.c list.c order.c arguments.c
+SOURCES = a_operations.c b_operations.c ab_operations.c \
+push_swap.c free.c list.c dumb_sort.c arguments.c turk.c \
+sort_utils.c
 
 OBJECTS = $(patsubst %.c,$(ODIR)/%.o,$(SOURCES))
 ODIR = ./obj

@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 16:11:05 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/28 18:03:42 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/02/29 18:58:24 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@
 
 typedef struct t_stack
 {
-	int				content;
+	int				nbr;
 	struct t_stack	*next;
 	int				index;
+	int				cost;
 }	t_stack;
 
 typedef struct t_ps
@@ -43,11 +44,14 @@ void	rrr(t_ps *l);
 void	free_all(t_ps *l);
 void	error_free(t_ps *l);
 void	free_split(char **array);
-t_stack	*stacknew(int content);
+t_stack	*stacknew(int nbr);
 t_stack	*stacklast(t_stack *lst);
 int		stacksize(t_stack *lst);
 void	stackadd_back(t_stack **lst, t_stack *new);
 void	stackadd_front(t_stack *lst, t_stack *new);
-void	order(t_ps *l);
 void	fill_stack(t_ps *l, char **args, int argc);
+void	dumb_sort(t_ps *l);
+void	turk_sort(t_ps *l);
+void	apply_index(t_ps *l);
+int		get_pos(t_stack *stack, t_stack *target);
 #endif
