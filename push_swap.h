@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 16:11:05 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/29 18:58:24 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/01 11:30:23 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,5 @@ void	dumb_sort(t_ps *l);
 void	turk_sort(t_ps *l);
 void	apply_index(t_ps *l);
 int		get_pos(t_stack *stack, t_stack *target);
+t_stack	*get_smallest(t_stack *stack);
 #endif
