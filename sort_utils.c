@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:30:58 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/29 18:49:30 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/04 12:44:49 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,20 @@ int	get_pos(t_stack *stack, t_stack *target)
 		cost++;
 	}
 	return (cost);
+}
+
+t_stack	*get_next_smallest(t_stack *stack, t_stack *node)
+{
+	t_stack	*next_smallest;
+	t_stack	*tmp;
+
+	next_smallest = NULL;
+	tmp = stack;
+	while (tmp)
+	{
+		if (tmp->nbr < node->nbr && (next_smallest == NULL || tmp->nbr > next_smallest->nbr))
+			next_smallest = tmp;
+		tmp = tmp->next;
+	}
+	return (next_smallest);
 }
