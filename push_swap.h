@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 16:11:05 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/04 12:42:32 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/04 15:53:48 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	sb(t_ps *l);
 void	ss(t_ps *l);
 void	pa(t_ps *l);
 void	pb(t_ps *l);
-void	swap(t_stack *a1, t_stack *a2);
 void	ra(t_ps *l);
 void	rb(t_ps *l);
 void	rr(t_ps *l);
