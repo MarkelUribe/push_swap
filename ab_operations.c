@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:28:06 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/05 13:56:19 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/05 15:36:28 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,15 +84,12 @@ void	ss(t_ps *l)
 {
 	t_stack	*tmp;
 
-	if (l->a != NULL && l->a->next != NULL)
+	if (l->a != NULL && l->a->next != NULL && l->b != NULL && l->b->next != NULL)
 	{
 		tmp = l->a->next;
 		l->a->next = tmp->next;
 		tmp->next = l->a;
 		l->a = tmp;
-	}
-	if (l->b != NULL && l->b->next != NULL)
-	{
 		tmp = l->b->next;
 		l->b->next = tmp->next;
 		tmp->next = l->b;
