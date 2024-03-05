@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:28:06 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/04 16:09:00 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/05 13:56:19 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,13 @@ void	rr(t_ps *l)
 {
 	t_stack	*tmp;
 
-	if (l->a != NULL && l->a->next != NULL)
+	if (l->a != NULL && l->a->next != NULL
+		&& l->b != NULL && l->b->next != NULL)
 	{
 		tmp = l->a->next;
 		l->a->next = tmp->next;
 		tmp->next = l->a;
 		l->a = tmp;
-	}
-	if (l->b != NULL && l->b->next != NULL)
-	{
 		tmp = l->b;
 		l->b = l->b->next;
 		tmp->next = NULL;
@@ -39,7 +37,7 @@ static void	fake_rra(t_ps *l)
 	t_stack	*lst;
 	t_stack	*last;
 
-	if (!l->a || !l->a->next)
+	if (!l->a || !l->a->next || !l->b || !l->b->next)
 		return ;
 	last = stacklast(l->a);
 	lst = l->a;
@@ -60,7 +58,7 @@ static void	fake_rrb(t_ps *l)
 	t_stack	*lst;
 	t_stack	*last;
 
-	if (!l->b || !l->b->next)
+	if (!l->a || !l->a->next || !l->b || !l->b->next)
 		return ;
 	last = stacklast(l->b);
 	lst = l->b;

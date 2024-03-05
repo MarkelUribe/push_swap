@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:40:32 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/04 12:45:45 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/05 13:47:57 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	print_ab(t_ps *l)
 		else if (ta)
 			ft_printf("%d-\t%d\t \n", ta->cost, ta->nbr);
 		else if (tb)
-			ft_printf("%d-\t \t%d\n", ta->cost, tb->nbr);
+			ft_printf("N-\t \t%d\n", tb->nbr);
 		if (ta)
 			ta = ta->next;
 		if (tb)

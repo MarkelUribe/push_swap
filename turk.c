@@ -6,37 +6,11 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:23:24 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/04 16:17:14 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/05 13:39:41 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	get_distance(t_stack *stack, t_stack *target)
-{
-	int	distance;
-	int	pos;
-	int	size;
-
-	pos = get_pos(stack, target);
-	size = stacksize(stack);
-	if (pos <= size / 2)
-		distance = pos - 1;
-	else
-		distance = (size - pos) + 1;
-	return (distance);
-}
-
-int	is_in_same_half(t_ps *l, t_stack *nodea, t_stack *nodeb)
-{
-	if ((get_pos(l->a, nodea) < stacksize(l->a) / 2
-		&& get_pos(l->b, nodeb) < stacksize(l->b) / 2)
-		|| (get_pos(l->a, nodea) > stacksize(l->a) / 2
-		&& get_pos(l->b, nodeb) > stacksize(l->b) / 2))
-		return (1);
-	else
-		return (0);
-}
 
 void	calc_cost(t_ps *l)
 {
@@ -60,58 +34,6 @@ void	calc_cost(t_ps *l)
 	}
 }
 
-t_stack	*get_smallest_cost(t_stack *stack)
-{
-	t_stack	*tmp;
-	t_stack	*smallest;
-
-	tmp = stack;
-	smallest = stack;
-	while (tmp)
-	{
-		if (tmp->cost < smallest->cost)
-			smallest = tmp;
-		tmp = tmp->next;
-	}
-	return (smallest);
-}
-
-void	rotate_a_to_top(t_ps *l, t_stack *node)
-{
-	int	s_pos;
-	int	size;
-
-	if (!node)
-		return ;
-	s_pos = get_pos(l->a, node);
-	size = stacksize(l->a);
-	while (l->a != node)
-	{
-		if (s_pos > size / 2)
-			rra(l);
-		else
-			ra(l);
-	}
-}
-
-void	rotate_b_to_top(t_ps *l, t_stack *node)
-{
-	int	s_pos;
-	int	size;
-
-	if (!node)
-		return ;
-	s_pos = get_pos(l->b, node);
-	size = stacksize(l->b);
-	while (l->b != node)
-	{
-		if (s_pos > size / 2)
-			rrb(l);
-		else
-			rb(l);
-	}
-}
-
 void	move_to_b(t_ps *l, t_stack *node)
 {
 	t_stack	*next_smallest;
@@ -120,14 +42,16 @@ void	move_to_b(t_ps *l, t_stack *node)
 	int		i;
 
 	next_smallest = get_next_smallest(l->b, node);
+	if (!next_smallest)
+		next_smallest = get_biggest(l->b);
 	a_pos = get_pos(l->a, node);
 	b_pos = get_pos(l->b, next_smallest);
 	if (is_in_same_half(l, node, next_smallest))
 	{
 		if (a_pos > b_pos)
-			i = b_pos;
+			i = b_pos - 1;
 		else
-			i = a_pos;
+			i = a_pos - 1;
 		if (a_pos <= stacksize(l->a) / 2)
 		{
 			while (i--)
@@ -136,9 +60,9 @@ void	move_to_b(t_ps *l, t_stack *node)
 		else
 		{
 			if (a_pos > b_pos)
-				i = stacksize(l->b) - b_pos;
+				i = stacksize(l->b) - b_pos - 1;
 			else
-				i = stacksize(l->a) - a_pos;
+				i = stacksize(l->a) - a_pos - 1;
 			while (i--)
 				rrr(l);
 		}

@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:30:58 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/04 16:16:46 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/05 13:51:54 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	get_pos(t_stack *stack, t_stack *target)
 	t_stack	*tmp;
 	int		cost;
 
-	if(!target)
+	if (!target)
 		return (0);
 	cost = 1;
 	tmp = stack;
@@ -100,9 +100,8 @@ t_stack	*get_next_smallest(t_stack *stack, t_stack *node)
 	tmp = stack;
 	while (tmp)
 	{
-		if (tmp->nbr < node->nbr
-			&& (next_smallest == NULL
-			|| tmp->nbr > next_smallest->nbr))
+		if (tmp->nbr < node->nbr && (next_smallest == NULL
+				|| tmp->nbr > next_smallest->nbr))
 			next_smallest = tmp;
 		tmp = tmp->next;
 	}
