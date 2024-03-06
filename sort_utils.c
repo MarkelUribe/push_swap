@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:30:58 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/05 16:20:44 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/06 12:18:19 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ t_stack	*get_next_smallest(t_stack *stack, t_stack *node)
 			next_smallest = tmp;
 		tmp = tmp->next;
 	}
-	if (next_smallest == node)
+	if (next_smallest == NULL)
 		return (get_biggest(stack));
 	return (next_smallest);
 }

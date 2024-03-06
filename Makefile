@@ -6,14 +6,14 @@
 #    By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/14 11:18:25 by muribe-l          #+#    #+#              #
-#    Updated: 2024/03/05 13:37:31 by muribe-l         ###   ########.fr        #
+#    Updated: 2024/03/06 13:26:04 by muribe-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 SOURCES = a_operations.c b_operations.c ab_operations.c \
 push_swap.c free.c list.c dumb_sort.c arguments.c turk.c \
-sort_utils.c turk_utils.c
+sort_utils.c turk_utils.c turk_utils_2.c
 
 OBJECTS = $(patsubst %.c,$(ODIR)/%.o,$(SOURCES))
 ODIR = ./obj

@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:40:32 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/05 13:47:57 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/06 14:33:09 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	print_ab(t_ps *l)
 	while (ta || tb)
 	{
 		if (ta && tb)
-			ft_printf("%d-\t%d\t%d\n", ta->cost, ta->nbr, tb->nbr);
+			ft_printf("%d-\t%d\t%d\n", ta->index, ta->nbr, tb->nbr);
 		else if (ta)
-			ft_printf("%d-\t%d\t \n", ta->cost, ta->nbr);
+			ft_printf("%d-\t%d\t \n", ta->index, ta->nbr);
 		else if (tb)
 			ft_printf("N-\t \t%d\n", tb->nbr);
 		if (ta)
@@ -53,9 +53,9 @@ int	main(int argc, char **args)
 		return (0);
 	fill_stack(list, args, argc);
 	apply_index(list);
-	print_ab(list);
+	//print_ab(list);
 	turk_sort(list);
-	print_ab(list);
+	//print_ab(list);
 	free_all(list);
 	return (1);
 }

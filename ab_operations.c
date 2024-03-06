@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:28:06 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/05 15:36:28 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/06 14:09:59 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ void	rr(t_ps *l)
 		l->b = l->b->next;
 		tmp->next = NULL;
 		stacklast(l->b)->next = tmp;
+		write(1, "rr\n", 3);
 	}
-	write(1, "rr\n", 3);
 }
 
-static void	fake_rra(t_ps *l)
+static int	fake_rra(t_ps *l)
 {
 	int		i;
 	t_stack	*lst;
 	t_stack	*last;
 
 	if (!l->a || !l->a->next || !l->b || !l->b->next)
-		return ;
+		return (0);
 	last = stacklast(l->a);
 	lst = l->a;
 	i = 0;
@@ -50,16 +50,17 @@ static void	fake_rra(t_ps *l)
 	lst->next = NULL;
 	last->next = l->a;
 	l->a = last;
+	return (1);
 }
 
-static void	fake_rrb(t_ps *l)
+static int	fake_rrb(t_ps *l)
 {
 	int		i;
 	t_stack	*lst;
 	t_stack	*last;
 
 	if (!l->a || !l->a->next || !l->b || !l->b->next)
-		return ;
+		return (0);
 	last = stacklast(l->b);
 	lst = l->b;
 	i = 0;
@@ -71,20 +72,21 @@ static void	fake_rrb(t_ps *l)
 	lst->next = NULL;
 	last->next = l->b;
 	l->b = last;
+	return (1);
 }
 
 void	rrr(t_ps *l)
 {
-	fake_rra(l);
-	fake_rrb(l);
-	write(1, "rrr\n", 4);
+	if (fake_rra(l) && fake_rrb(l))
+		write(1, "rrr\n", 4);	
 }
 
 void	ss(t_ps *l)
 {
 	t_stack	*tmp;
 
-	if (l->a != NULL && l->a->next != NULL && l->b != NULL && l->b->next != NULL)
+	if (l->a != NULL && l->a->next != NULL
+		&& l->b != NULL && l->b->next != NULL)
 	{
 		tmp = l->a->next;
 		l->a->next = tmp->next;
@@ -94,6 +96,6 @@ void	ss(t_ps *l)
 		l->b->next = tmp->next;
 		tmp->next = l->b;
 		l->b = tmp;
+		write(1, "ss\n", 3);
 	}
-	write(1, "ss\n", 3);
 }

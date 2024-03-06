@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:23:24 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/05 16:21:36 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/06 13:25:26 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	rr_rrr_operations(t_ps *l, t_stack *node, t_stack	*next_smallest)
 	a_pos = get_pos(l->a, node);
 	b_pos = get_pos(l->b, next_smallest);
 	if (a_pos > b_pos)
-			i = b_pos - 1;
+		i = b_pos - 1;
 	else
 		i = a_pos - 1;
 	if (a_pos <= stacksize(l->a) / 2)
@@ -76,31 +76,42 @@ void	move_to_b(t_ps *l, t_stack *node)
 
 void	sort_last_three(t_ps *l)
 {
-	t_stack *a;
+	t_stack	*a;
+	t_stack	*s;
+	t_stack	*b;
 
 	a = l->a;
+	s = get_smallest(a);
+	b = get_biggest(a);
 	if (a->nbr > a->next->nbr && a->next->nbr > a->next->next->nbr)
 	{
 		sa(l);
 		rra(l);
 	}
-	else if (a == get_smallest(a) && a->next == get_biggest(a))
+	else if (a == s && a->next == b)
 	{
 		rra(l);
 		sa(l);
 	}
-	if (a != get_smallest(a))
-		rotate_a_to_top(l, get_smallest(a));
+	else if (a->next == s && a->next->next == b)
+		sa(l);
+	else if (a != s)
+		rotate_a_to_top(l, s);
 }
 
 void	turk_sort(t_ps *l)
 {
+	if (stacksize(l->a) < 3)
+	{
+		rotate_a_to_top(l, get_smallest(l->a));
+		exit(0);
+	}
 	if (stacksize(l->a) > 4)
 	{
 		pb(l);
 		pb(l);
 	}
-	else if(stacksize(l->a) == 4)
+	else if (stacksize(l->a) == 4)
 		pb(l);
 	while (stacksize(l->a) > 3)
 	{
@@ -108,4 +119,6 @@ void	turk_sort(t_ps *l)
 		move_to_b(l, get_smallest_cost(l->a));
 	}
 	sort_last_three(l);
+	move_back_to_a(l);
+	rotate_a_to_top(l, get_smallest(l->a));
 }
