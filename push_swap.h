@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 16:11:05 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/06 13:18:14 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:31:28 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,11 @@ t_stack	*get_next_smallest(t_stack *stack, t_stack *node);
 t_stack	*get_next_biggest(t_stack *stack, t_stack *node);
 int		get_distance(t_stack *stack, t_stack *target);
 int		is_in_same_half(t_ps *l, t_stack *nodea, t_stack *nodeb);
+int		is_sorted(t_stack *stack);
 void	rotate_a_to_top(t_ps *l, t_stack *node);
 void	rotate_b_to_top(t_ps *l, t_stack *node);
 t_stack	*get_smallest_cost(t_stack *stack);
 t_stack	*get_biggest(t_stack *stack);
 void	move_back_to_a(t_ps *l);
+void	print_ab(t_ps *l);
 #endif

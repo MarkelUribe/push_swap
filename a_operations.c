@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:28:09 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/29 12:29:05 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:21:55 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void	ra(t_ps *l)
 
 void	rra(t_ps *l)
 {
-	int		i;
 	t_stack	*lst;
 	t_stack	*last;
 
@@ -63,12 +62,8 @@ void	rra(t_ps *l)
 		return ;
 	last = stacklast(l->a);
 	lst = l->a;
-	i = 0;
-	while (i < stacksize(l->a) - 2)
-	{
+	while (lst->next != last)
 		lst = lst->next;
-		i++;
-	}
 	lst->next = NULL;
 	last->next = l->a;
 	l->a = last;

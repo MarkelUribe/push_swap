@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 13:28:35 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/05 13:50:29 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/06 19:34:19 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ void	rotate_a_to_top(t_ps *l, t_stack *node)
 	int	s_pos;
 	int	size;
 
-	if (!node)
+	if (!node || l->a == node)
 		return ;
 	s_pos = get_pos(l->a, node);
 	size = stacksize(l->a);
 	while (l->a != node)
 	{
-		if (s_pos > size / 2)
+		if (s_pos > size / 2 + 1)
 			rra(l);
 		else
 			ra(l);
@@ -61,13 +61,13 @@ void	rotate_b_to_top(t_ps *l, t_stack *node)
 	int	s_pos;
 	int	size;
 
-	if (!node)
+	if (!node || l->b == node)
 		return ;
 	s_pos = get_pos(l->b, node);
 	size = stacksize(l->b);
 	while (l->b != node)
 	{
-		if (s_pos > size / 2)
+		if (s_pos > size / 2 + 1)
 			rrb(l);
 		else
 			rb(l);
