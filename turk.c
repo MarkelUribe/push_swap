@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:23:24 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/06 19:52:50 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/07 13:34:22 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,32 +52,21 @@ void	exec_rr_rrr(t_ps *l, int c_rr, int c_rrr)
 
 void	rr_rrr_operations(t_ps *l, t_stack *node, t_stack *next_smallest)
 {
-	int rrr;
+	int	rrr;
 	int	rr;
 
 	rrr = 0;
 	rr = 0;
-	while (l->a != node && l->b != next_smallest)
+	while (l->a != node && l->b != next_smallest + 1)
 	{
 		if (get_pos(l->a, node) > stacksize(l->a) / 2)
 			rrr = 1;
 		else
 			rr = 1;
-
 		if (get_pos(l->b, next_smallest) > stacksize(l->b) / 2)
-		{
-			if (rrr != 0)
-				rrr = 3;
-			else
-				rrr = 2;
-		}
+			rrr = (rrr != 0) * 3 + (rrr == 0) * 2;
 		else
-		{
-			if (rr != 0)
-				rr = 3;
-			else
-				rr = 2;
-		}
+			rr = (rr != 0) * 3 + (rr == 0) * 2;
 		exec_rr_rrr(l, rr, rrr);
 	}
 }
@@ -87,8 +76,8 @@ void	move_to_b(t_ps *l, t_stack *node)
 	t_stack	*next_smallest;
 
 	next_smallest = get_next_smallest(l->b, node);
-	//if (is_in_same_half(l, node, next_smallest))
-	//	rr_rrr_operations(l, node, next_smallest);
+	if (is_in_same_half(l, node, next_smallest))
+		rr_rrr_operations(l, node, next_smallest);
 	rotate_a_to_top(l, node);
 	rotate_b_to_top(l, next_smallest);
 	pb(l);
