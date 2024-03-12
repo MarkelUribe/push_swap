@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:28:06 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/07 13:13:44 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/12 17:28:24 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,9 @@ static int	fake_rrb(t_ps *l)
 
 void	rrr(t_ps *l)
 {
-	if (fake_rra(l) || fake_rrb(l))
-		write(1, "rrr\n", 4);
+	fake_rra(l);
+	fake_rrb(l);
+	write(1, "rrr\n", 4);
 }
 
 void	ss(t_ps *l)

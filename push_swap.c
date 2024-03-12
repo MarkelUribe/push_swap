@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:40:32 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/07 13:15:32 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/12 18:06:30 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,19 @@ int	main(int argc, char **args)
 {
 	t_ps	*list;
 
+	if (argc == 1)
+		return (0);
 	list = malloc(sizeof(t_ps));
 	if (!list)
 	{
 		ft_printf("Error\n");
 		return (0);
 	}
-	if (argc == 1)
-		return (0);
 	fill_stack(list, args, argc);
 	apply_index(list);
 	//print_ab(list);
 	turk_sort(list);
-	print_ab(list);
+	//print_ab(list);
 	free_all(list);
 	return (1);
 }

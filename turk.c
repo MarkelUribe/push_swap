@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:23:24 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/07 13:34:22 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/12 17:39:31 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	rr_rrr_operations(t_ps *l, t_stack *node, t_stack *next_smallest)
 
 	rrr = 0;
 	rr = 0;
-	while (l->a != node && l->b != next_smallest + 1)
+	while (l->a != node && l->b != next_smallest)
 	{
 		if (get_pos(l->a, node) > stacksize(l->a) / 2)
 			rrr = 1;
