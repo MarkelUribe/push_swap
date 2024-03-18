@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:23:24 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/12 17:39:31 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/18 16:37:13 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,12 @@ void	calc_cost(t_ps *l)
 		cost = 0;
 		b = get_next_smallest(l->b, tmp);
 		if (is_in_same_half(l, tmp, b))
-			cost = get_distance(l->a, tmp) - get_distance(l->b, b) + 1;
+			cost = get_big_nbr(get_distance(l->a, tmp), get_distance(l->b, b));
 		else
-			cost = get_distance(l->a, tmp) + get_distance(l->b, b) + 1;
+			cost = get_distance(l->a, tmp) + get_distance(l->b, b);
 		if (cost < 0)
 			cost *= -1;
+		cost++;
 		tmp->cost = (unsigned int)cost;
 		tmp = tmp->next;
 	}

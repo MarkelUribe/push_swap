@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:17:31 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/06 16:50:21 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/18 16:35:10 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,12 @@ int	is_sorted(t_stack *stack)
 		tmp = tmp->next;
 	}
 	return (1);
+}
+
+int	get_big_nbr(int a, int b)
+{
+	if (a > b)
+		return (a);
+	else
+		return (b);
 }
