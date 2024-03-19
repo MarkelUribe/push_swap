@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 12:07:02 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/27 11:31:11 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/19 14:08:53 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	free_all(t_ps *l)
 void	error_free(t_ps *l)
 {
 	free_all(l);
-	ft_printf("Error\n");
+	write(2, "Error\n", 6);
 	exit(0);
 }
 

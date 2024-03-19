@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 16:11:05 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/18 16:35:10 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/19 13:45:29 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,5 @@ t_stack	*get_smallest_cost(t_stack *stack);
 t_stack	*get_biggest(t_stack *stack);
 void	move_back_to_a(t_ps *l);
 void	print_ab(t_ps *l);
+void	exec_rr_rrr(t_ps *l, int c_rr, int c_rrr);
 #endif

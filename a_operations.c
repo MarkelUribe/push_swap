@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:28:09 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/07 15:24:15 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/19 13:44:19 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,6 @@ void	sa(t_ps *l)
 
 	if (l->a != NULL && l->a->next != NULL)
 	{
-
-
-		
 		tmp = l->a->next;
 		l->a->next = tmp->next;
 		tmp->next = l->a;

@@ -6,7 +6,7 @@
 #    By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/14 11:18:25 by muribe-l          #+#    #+#              #
-#    Updated: 2024/03/06 13:26:04 by muribe-l         ###   ########.fr        #
+#    Updated: 2024/03/19 16:05:17 by muribe-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJECTS = $(patsubst %.c,$(ODIR)/%.o,$(SOURCES))
 ODIR = ./obj
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
+CFLAGS = -Wall -Wextra -Werror -g3
 RM = rm -rf
 LIBFTNAME = libft.a
 LIBFTDIR = ./libft

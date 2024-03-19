@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:23:24 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/18 16:44:32 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/19 13:45:23 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,6 @@ void	calc_cost(t_ps *l)
 		tmp->cost = (unsigned int)cost;
 		tmp = tmp->next;
 	}
-}
-
-void	exec_rr_rrr(t_ps *l, int c_rr, int c_rrr)
-{
-	if (c_rrr == 1)
-		rra(l);
-	else if (c_rrr == 2)
-		rrb(l);
-	else if (c_rrr == 3)
-		rrr(l);
-	if (c_rr == 1)
-		ra(l);
-	else if (c_rr == 2)
-		rb(l);
-	else if (c_rr == 3)
-		rr(l);
 }
 
 void	rr_rrr_operations(t_ps *l, t_stack *node, t_stack *next_smallest)

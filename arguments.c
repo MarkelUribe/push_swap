@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 16:34:50 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/02/29 16:31:35 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/19 14:16:00 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ static int	is_valid_number(char *str)
 	i = 0;
 	if (str[0] == '-')
 		i++;
+	if (!str[i])
+		return (0);
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
