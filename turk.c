@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 17:23:24 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/19 13:45:23 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/19 19:23:25 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ void	turk_sort(t_ps *l)
 		pb(l);
 		pb(l);
 	}
-	else if (stacksize(l->a) == 4)
+	else if (stacksize(l->a) == 4 && !is_sorted(l->a))
 		pb(l);
 	while (stacksize(l->a) > 3 && !is_sorted(l->a))
 	{
